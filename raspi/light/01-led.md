@@ -26,9 +26,7 @@ Anyone can build a simple circuit, but not everyone can make it work using a Ras
 
 ### Introducing your prototyping kit
 
-Each student has been issued with a ziploc bag containing various components needed to complete this project. 
-
-![Annotated Photo of Prototyping Kit](images/prototyping.jpg)
+Each student has been issued with a ziploc bag containing various components needed to complete today's project. 
 
 | Part | Notes |
 |------|-------|
@@ -38,7 +36,6 @@ Each student has been issued with a ziploc bag containing various components nee
 | LEDs | Light emitting diodes emit single-wavelength light and are available in many colors and form factors |
 | Resistors | Components that reduce voltage and current flow through a circuit |
 | Momentary switch | Basically, a push button |
-| Pulsox bits | We may want to include all the pulsox bits here as well |
 
 #### Breadboard
 
@@ -70,7 +67,7 @@ To use a breadboard, you need 22 gauge solid-core (not stranded) wires that have
 
 [Resistors](http://en.wikipedia.org/wiki/Resistor) are good at one thing: *resisting* the flow of electricity (otherwise known as current). This allows you, as a circuit designer, control where and how fast current flows.
 
-A helpful way of thinking about electrical current and resistance is to think of it in terms of water pressure in a tube. If you have water flowing in a tube and you put a smaller pipe in line, there will be more resistance to water flow. On the other hand, attaching a larger pipe will lead to less resistance to water flow.
+A helpful way of conceptualizing electrical current and resistance is to think of it in terms of water pressure in a tube. If you have water flowing in a tube and you put a smaller pipe in line, there will be more resistance to water flow. On the other hand, attaching a larger pipe will lead to less resistance to water flow.
 
 **Reading Resistor Codes**
 
@@ -120,15 +117,19 @@ The Cobbler is a utility header board and ribbon cable that makes it really easy
 
 To turn the LED on and off we need to control it using one of the Raspberry Pi's GPIO pins. We'll worry about the programming later - for now, we will just wire up the circuit and hope for the best!
 
-1. If you have not already, install the Cobbler on the solderless breadboard. Make sure the first row of pins are seated in breadboard row **1**. Then, connect the ribbon cable from the Cobbler to the Pi.
+1. If you have not already, install the Cobbler on the solderless breadboard. Make sure the first row of pins are seated in breadboard row **1**.
 2. Connect one jumper wire from the **GND** pin to the **-** rail on the breadboard
 3. Connect another jumper wire from **#25** to an open row on the breadboard
-4. Put a **Red-Red-Brown-Gold** resistor on the same row, connecting to another row :question: What is the value in Ohms of this resistor?
+4. Put a **220 Ohm** (Red-Red-Brown-Gold) resistor on the same row, connecting to another row :question: What is the value in Ohms of this resistor?
 5. Connect the **Anode (+)** of any Red, Green, or Yellow LED downstream of the resistor
 6. Connect the **Cathode (-)** of the LED to the common **GND** rail
-7. Your connections should resemble the ones in this diagram:
+7. Finally, connect the ribbon cable from the Cobbler to the Pi.
+8. Your connections should resemble the ones in this diagram:
 
 ![Fritzing diagram of the circuit](images/led-101_bb.png)
+
+# Challenge
+:sparkle: Try briefly moving the wire from **#25** to **3V3** - What happens? Don't forget to plug back into **#25** when you are done playing :-)
 
 **:boom: Make sure  the LED is in the correct orientation or it will not light when we power it up.**
 
@@ -136,17 +137,21 @@ To turn the LED on and off we need to control it using one of the Raspberry Pi's
 * The purpose of common electronics components like breadboards, LEDs, and resistors
 * How to read resistor codes
 * Technique for cutting and preparing jumper wires
-* How to follow a circuit diagram to create a functioning circuit
-
-# Challenges
-:sparkle: Try briefly moving the wire from **#25** to **3V3** - What happens? Don't forget to plug back into **#25** when you are done playing :-)
+* How to use a breadboard to prototype wired circuits
+* How to follow a simple circuit diagram
 
 # Resources
 * [Graphical Resistor Chart](http://resistor.cherryjourney.pt)
 * [Sparkfun](http://www.sparkfun.com/)
 * [Adafruit Industries](http://www.adafruit.com/)
 * [Fritzing](http://fritzing.org/)
+* [Materials List for "Physical Computing with Raspberry Pi"](10-materials.md#materials-list-introduction-to-physical-computing)
 
 # Acknowledgements
 1. Lady Ada for images and inspiration pertaining to the breadboarding tutorial
+
+#### Next Objective
+1. [x] [Build a programmable LED light](01-led.md)
+2. **[Make your light blink using Python](02-programming.md)**
+3. [Add a pushbutton switch to your circuit](03-switch.md)
 

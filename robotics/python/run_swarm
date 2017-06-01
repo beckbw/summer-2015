@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while read host; do
+  echo ${host}
+  scp -o StrictHostKeyChecking=no $1 pi@${host}:~/summer-2015/robotics/python &
+done <hostfile
+wait
+while read host; do
+  echo ${host}
+  ssh -o StrictHostKeyChecking=no pi@${host} "cd ~/summer-2015/robotics/python; nohup python -u $1 & " &
+done <hostfile

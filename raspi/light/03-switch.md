@@ -44,7 +44,7 @@ In the top figure, a **pull-up resistor** connects the GPIO pin via a 10kΩ resi
 
 To make sure this works for everyone, we will cut and paste in the program instead of typing it all in. Feel free to start with this code in the future when you make your own projects!
 
-* Open Leafpad (or other text editor) then copy and paste this code from your browser into the editor window.
+* Open LeafPad then copy and paste this code from your browser into the editor window.
 
 **[button.py](other-materials/button.py)**
 ```python
@@ -73,13 +73,14 @@ while True:
         # switch re-open after being pushed
         print('Button Pressed')
         time.sleep(0.2)
+
 ```
 
 * Save the pasted text to a file named **button.py**
 
 ## Run the button.py program
 
-* Enter the following command into the Terminal: `sudo python button.py`. :star: Make sure you current directory is the same as where you saved **button.py**.
+* Enter the following command into the Terminal: `sudo python button.py`. :star: Make sure your current directory is the same as where you saved **button.py**.
 
 :question: Why do we need to put **sudo** in front of the **python** command?
 
@@ -108,26 +109,27 @@ while True:
 import RPi.GPIO as GPIO
 import time
 
-# Define the blinking function
+# Blinking function
 def blink(pin):
     GPIO.output(pin,GPIO.LOW)
-    time.sleep(0.10)
+    time.sleep(0)
     GPIO.output(pin,GPIO.LOW)
     return
 
 # Use BCM pin numbers
 GPIO.setmode(GPIO.BCM)
 
-# Set up a pin for input
-GPIO.setup(24, GPIO.IN)
-# Set up an output channel to control the LED
-GPIO.setup(21, GPIO.OUT)
+# Set up GPIO #18 for input
+GPIO.setup(18, GPIO.IN)
+# Set up GPIO #25 output channel
+GPIO.setup(25, GPIO.OUT)
 
 while True:
-    input_state = GPIO.input(18)
-    if input_state == True:
+    input_state = GPIO.input(12)
+    if input_state == False:
         print('Button Pressed')
-        blink(25)
+        blink(22)
+
 ```
 
 :sparkle: List 3-4 other things you could do in response to a button press. What if you had multiple buttons - what could you do then?
@@ -138,3 +140,10 @@ while True:
 * [O'Reilly Raspberry Pi Cookbook](http://razzpisampler.oreilly.com/ch07.html)
 * [Physical computing with Raspberry Pi](https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/robot/buttons_and_switches/) courtesy of the [University of Cambridge Computer Laboratory](https://www.cl.cam.ac.uk/)
 * [Make: Tutorial: Raspberry Pi GPIO Pins and Python](http://makezine.com/projects/tutorial-raspberry-pi-gpio-pins-and-python/)
+* [Materials List for "Physical Computing with Raspberry Pi"](10-materials.md#materials-list-introduction-to-physical-computing)
+
+#### Next Objective
+1. [x] [Build a programmable LED light](01-led.md)
+2. [x] [Make your light blink using Python](02-programming.md)
+3. [x] [Add a pushbutton switch to your circuit](03-switch.md)
+4. **[Day 1 Schedule](../../README.md#day-1)**
